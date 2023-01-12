@@ -102,9 +102,9 @@ header img{
 /* NAV --> */
 
 nav{
-    /* To make navbar be at top at all time */
+    /* To make navbar be at the top at all times */
     position: sticky;
-    top: 0;
+    top: -1px;
 
     /* Some design for navbar */
     padding: 2rem;
