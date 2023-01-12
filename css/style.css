@@ -69,13 +69,6 @@ html::-webkit-scrollbar-thumb{
 }
 /* <-- */
 
-/*  */
-body{
-    /*display: flex;
-    flex-direction: column;
-    min-height: 100vh;*/
-}
-
 /* So aside and main can be in a row */
 #content{
     display: flex;
