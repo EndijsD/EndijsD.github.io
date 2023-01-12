@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
+
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+Remove list styles (bullets/numbers)
+in case you use it with normalize.css
+*/
+ol, ul {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* Removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* MY CODE */
+
+/* Couple of things for the website in general */
+*{
+    font-family: 'Nunito', sans-serif;
+    /* So the website feels/looks better, not as snappy */
+    transition: .2s;
+    /* So it smoothly scrolls down when pressing navigation */
+    scroll-behavior: smooth;
+}
+
+/* So the selection fits the style of the website */
+*::selection{
+    background: #740c3b;
+    color: white;
+}
+
+/* So the scrollbar fits the style of the website --> */
+html::-webkit-scrollbar{
+    width: .7rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: white;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #610a31;
+}
+/* <-- */
+
+/*  */
+body{
+    /*display: flex;
+    flex-direction: column;
+    min-height: 100vh;*/
+}
+
+/* So aside and main can be in a row */
+#content{
+    display: flex;
+}
+
+/* HEADER --> */
+
+header{
+    background: #34393a;
+}
+
+/* So the image is centered and appropriate size*/
+header img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+}
+
+/* <-- HEADER */
+
+/* NAV --> */
+
+nav{
+    /* To make navbar be at top at all time */
+    position: sticky;
+    top: 0;
+
+    /* Some design for navbar */
+    padding: 2rem;
+    background: #740c3b;
+    box-shadow: 0px 5px 5px #4b636b;
+}
+
+/* So the navbar items are in a row with a gap in the center */
+nav ul{
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+}
+
+/* Design for the navbar links */
+nav a{
+    color: white;
+    font-weight: 700;
+    font-size: larger;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    cursor: pointer;
+}
+
+/* Design for the navbar links when they are hovered on */
+nav a:hover{
+    padding: 10px 0;
+    border-color: #c31404;
+    color: #c31404;
+}
+
+/* Design for the navbar links when they are pressed */
+nav a:active{
+    border-color: #34393a;
+    color: #34393a;
+}
+
+/* <-- NAV */
+
+/* ASIDE --> */
+
+/* So aside takes up 25% of the websites width, content is displayed vertically and other design choices */
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 25%;
+    padding: 1rem;
+    background: #9bc3da;
+}
+
+/* Design for the aside heading */
+aside h2{
+    font-size: 25px;
+    font-weight: 700;
+    color: #4b636b;
+}
+
+/* Design for the aside paraghraphs */
+aside p{
+    font-weight: 200;
+    color: #4b636b;
+}
+
+/* <-- ASIDE */
+
+/* MAIN --> */
+
+/* Design for main content */
+main{
+    /* So that main takes up all space it can horizontally */
+    flex-grow: 1;
+
+    padding: 3rem;
+    background: #d4e8ef;
+}
+
+/* Design for heading */
+main h1{
+    font-weight: 700;
+    text-align: center;
+    font-size: 30px;
+    color: #c31404;
+    text-shadow: 1px 1px black;
+}
+
+/* Design for sub-headings */
+main h3{
+    font-size: larger;
+    color: #304048;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Displaying the items centered in grid cells and other design */
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    text-align: center;
+    gap: 3rem;
+    margin: 3rem auto;
+}
+
+/* Displaying items vertically with them being centered */
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Design for images */
+section img{
+    /* So the images are contained within their own box */
+    object-fit: contain;
+
+    width: 300px;
+    height: 300px;
+    background: #eee;
+    border-radius: 10px;
+}
+
+/* So that on hover images enlargen and change background color */
+section img:hover{
+    background: #ccc;
+    width: 400px;
+    height: 400px;
+}
+
+/* So that images respond appropriately for resolution changes */
+section ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Puts a background for each article and section */
+article, section{
+    background: whitesmoke;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+/* Every element with this class gets a separation between itself and the lower element */
+.after{
+    margin-bottom: 1rem;
+}
+
+/* So that text is displayed next to an image and some other design choices */
+.flex-group{
+    display: flex;
+    gap: 3rem;
+    margin: 2rem;
+    text-align: center;
+    align-items: center;
+}
+
+/* Design for form elements */
+input, textarea{
+    background: #eee;
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid #040404;
+    margin-bottom: 1rem;
+}
+
+/* Changes background when element is hovered or selected --> */
+input:hover, textarea:hover{
+    background: #ccc;
+}
+
+input:active, textarea:active{
+    background: #aaa;
+}
+/* <-- */
+
+/* So that text area is resizable by user */
+textarea{
+    resize: both;
+}
+
+#submit{
+    text-align: center;
+}
+
+#contact-text{
+    margin: 1rem;
+    text-align: center;
+}
+
+#contact-text a{
+    color: #c31404;
+    cursor: pointer;
+}
+
+/* Changes background when element is hovered or selected --> */
+#contact-text a:hover{
+    color: #5e7c8a;
+}
+
+#contact-text a:active{
+    color: #34393a;
+}
+/* <-- */
+
+/* <-- MAIN */
+
+/* FOOTER --> */
+
+/* So that icons are in a row centered and some other design */
+footer ul{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    padding: 2rem;
+    background: #740c3b;
+}
+
+/* Style for social icon buttons */
+footer i{
+    color: white;
+    font-size: larger;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px #333;
+    cursor: pointer;
+}
+
+/* Colors for each social icon and color changes when hovered or selected --> */
+.fa-twitter{
+    background: #1DA1F2;
+}
+
+.fa-instagram{
+    background: #FD1D1D;
+}
+
+.fa-facebook{
+    background: #4267B2;
+}
+
+footer i:hover{
+    background: #5e7c8a;
+}
+
+footer i:active{
+    background: #34393a;
+}
+/* <-- */
+
+/* So the text is centered and other design */
+footer span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: large;
+    font-style: italic;
+    color: white;
+    background: #34393a;
+}
+
+/* <-- FOOTER */
+
+/* RESPONSIVENESS */
+
+/* When the screen is smaller aside is shown above main not besides */
+@media (max-width: 900px) {
+    #content{
+        display: block;
+    }
+
+    aside{
+        width: 100%;
+        gap: 1rem;
+    }
+}
+
+/* When the screen is smaller website is configured appropriately */
+@media (max-width: 500px){
+    main{
+        padding: 0;
+    }
+
+    footer span{
+        font-size: smaller;
+    }
+
+    .flex-group{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
