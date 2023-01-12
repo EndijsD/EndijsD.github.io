@@ -69,9 +69,18 @@ html::-webkit-scrollbar-thumb{
 }
 /* <-- */
 
-/* So aside and main can be in a row */
+/* So aside and main can be in a row and so websites content takes up as much space as possible */
 #content{
     display: flex;
+    flex-grow: 1;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+
+    /* So the website as minimum takes up a displays worth of space */
+    min-height: 100vh;
 }
 
 /* HEADER --> */
